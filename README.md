@@ -156,9 +156,6 @@ This is useful for creating quick release summaries after build, scan, and quali
 - OWASP Dependency-Check Plugin
 - SonarQube server configured in Jenkins
 
-## Screenshots to add later
-
-To make the GitHub repository stronger, add screenshots for Jenkins library setup, successful pipeline run, SonarQube quality gate, Trivy scan result, DockerHub image, and optional GenAI release summary. See `docs/SCREENSHOTS.md`.
 
 ## Career value
 
@@ -173,14 +170,3 @@ This project demonstrates:
 - AI-assisted release documentation
 - Secure credential handling
 
-## Suggested GitHub repo name
-
-```text
-jenkins-shared-library-devsecops
-```
-
-## Suggested GitHub description
-
-```text
-Reusable Jenkins Shared Library for Docker CI/CD, SonarQube, OWASP Dependency Check, Trivy scanning, SBOM generation, and optional GenAI release summaries.
-```
