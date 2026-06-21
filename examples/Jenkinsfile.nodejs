@@ -1,0 +1,56 @@
+@Library('devops-shared-lib') _
+
+pipeline {
+    agent any
+
+    environment {
+        DOCKER_CREDENTIALS_ID = 'dockerhub-creds'
+        SONAR_SERVER = 'sonarqube-server'
+        IMAGE_BASE = 'nodejs-api'
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Install and Test') {
+            steps {
+                sh 'npm ci'
+                sh 'npm test --if-present'
+            }
+        }
+
+        stage('Security Scan') {
+            steps {
+                trivy_scan(Target: '.', Severities: ['HIGH', 'CRITICAL'], ExitCode: 1)
+            }
+        }
+
+        stage('Docker Build and Scan') {
+            steps {
+                docker_build_and_scan(
+                    CredId: env.DOCKER_CREDENTIALS_ID,
+                    ImageBase: env.IMAGE_BASE,
+                    Tags: [env.BUILD_NUMBER, 'latest'],
+                    ContextPath: '.'
+                )
+            }
+        }
+
+        stage('Push Image') {
+            when {
+                branch 'main'
+            }
+            steps {
+                docker_push(
+                    CredId: env.DOCKER_CREDENTIALS_ID,
+                    ImageBase: env.IMAGE_BASE,
+                    Tags: [env.BUILD_NUMBER, 'latest']
+                )
+            }
+        }
+    }
+}
