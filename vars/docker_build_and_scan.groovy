@@ -4,7 +4,7 @@ def call(Map params = [:]) {
     def imageSuffix = params.ImageSuffix ?: params.imageSuffix ?: ''
     def tags = params.Tags ?: params.tags ?: ['latest']
     def contextPath = params.ContextPath ?: params.contextPath ?: params.BuildContext ?: params.buildContext ?: '.'
-
+ 
     if (!credentialId) {
         error('Docker credentials id is required. Example: CredId: \'dockerhub-creds\'')
     }
