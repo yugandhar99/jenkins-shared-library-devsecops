@@ -5,7 +5,7 @@ def call(String imageName, List tags = ['latest'], String contextPath = '.') {
     if (!tags || tags.isEmpty()) {
         tags = ['latest']
     }
- 
+
     def tagArgs = tags.collect { tag ->
         validateDockerTag(tag)
         "-t ${shellQuote(imageName + ':' + tag)}"
