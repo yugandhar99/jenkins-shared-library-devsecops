@@ -9,3 +9,4 @@ def call(Map params = [:]) {
 
     archiveArtifacts artifacts: 'reports/dependency-check/**', allowEmptyArchive: true
 }
+ 
