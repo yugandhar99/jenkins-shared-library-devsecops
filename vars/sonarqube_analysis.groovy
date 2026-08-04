@@ -5,7 +5,7 @@ def call(String sonarQubeServer, String projectName, String projectKey) {
         ProjectKey: projectKey
     )
 }
- 
+
 def call(Map params = [:]) {
     def serverName = params.ServerName ?: params.serverName ?: params.SonarQubeAPI
     def projectName = params.ProjectName ?: params.projectName
