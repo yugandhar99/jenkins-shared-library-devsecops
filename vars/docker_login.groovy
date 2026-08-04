@@ -8,7 +8,7 @@ def call(String registry, String username, String password) {
     if (!password?.trim()) {
         error('Docker password/token is required. Store it in Jenkins Credentials, not in source code.')
     }
-
+ 
     withEnv([
         "DOCKER_REGISTRY_URL=${registry}",
         "DOCKER_LOGIN_USER=${username}",
