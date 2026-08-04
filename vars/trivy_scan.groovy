@@ -5,7 +5,7 @@ def call(Map params = [:]) {
     def exitCode = params.ExitCode == null ? 1 : params.ExitCode
     def reportDir = params.ReportDir ?: 'reports'
     def reportFile = params.ReportFile ?: "${reportDir}/trivy-fs-report.txt"
-
+ 
     def status = sh(
         label: 'Trivy filesystem scan',
         returnStatus: true,
