@@ -6,7 +6,7 @@ def call(Map params = [:]) {
         echo 'Slack webhook credential id not provided. Skipping notification.'
         return
     }
-
+ 
     withCredentials([string(credentialsId: webhookCredentialId, variable: 'SLACK_WEBHOOK_URL')]) {
         def payload = groovy.json.JsonOutput.toJson([text: message])
         writeFile file: 'slack-payload.json', text: payload
