@@ -6,7 +6,7 @@ def call(Map params = [:]) {
         echo 'GenAI release notes step is disabled.'
         return
     }
-
+ 
     def credentialsId = params.CredentialsId ?: params.credentialsId ?: 'genai-api-token'
     def apiUrl = params.ApiUrl ?: params.apiUrl ?: 'https://api.openai.com/v1/chat/completions'
     def model = params.Model ?: params.model ?: 'gpt-4o-mini'
