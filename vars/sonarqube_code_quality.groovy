@@ -6,4 +6,3 @@ def call(Map params = [:]) {
         waitForQualityGate abortPipeline: abortPipeline
     }
 }
- 
