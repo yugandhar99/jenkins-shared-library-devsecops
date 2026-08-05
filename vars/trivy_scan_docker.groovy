@@ -7,7 +7,7 @@ def call(Map params = [:]) {
     def ignoreUnfixed = params.IgnoreUnfixed == null ? true : params.IgnoreUnfixed
     def reportDir = params.ReportDir ?: 'reports'
     def reportFile = params.ReportFile ?: "${reportDir}/trivy-image-report.txt"
-
+ 
     if (!image?.trim()) {
         error("Trivy scan parameter 'Image' is required.")
     }
