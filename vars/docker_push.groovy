@@ -11,7 +11,7 @@ def call(Map params = [:]) {
     if (!imageBase) {
         error('ImageBase is required.')
     }
- 
+
     withCredentials([usernamePassword(credentialsId: credentialId, usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
         def imageName = buildImageName(env.DOCKER_USER, imageBase, imageSuffix)
         docker_login(registry, env.DOCKER_USER, env.DOCKER_PASS)
