@@ -10,4 +10,3 @@ def call(String project, String imageTag = 'latest', String dockerHubUser = '') 
 private String shellQuote(Object value) {
     return "'" + value.toString().replace("'", "'\\''") + "'"
 }
- 
