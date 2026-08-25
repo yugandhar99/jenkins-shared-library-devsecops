@@ -1,4 +1,4 @@
-def call(Map params = [:]) { 
+def call(Map params = [:]) {
     def registry = params.Registry ?: params.registry ?: 'https://index.docker.io/v1/'
     def credentialId = params.CredId ?: params.credentialsId ?: params.CredentialsId
     def imageBase = params.ImageBase ?: params.imageBase ?: params.Project ?: params.project
