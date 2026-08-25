@@ -1,4 +1,4 @@
-def call(String registry, String username, String password) {
+def call(String registry, String username, String password) { 
     if (!registry?.trim()) {
         registry = 'https://index.docker.io/v1/'
     }
