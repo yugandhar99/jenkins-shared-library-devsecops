@@ -1,4 +1,4 @@
-def call(String project, String imageTag = 'latest', String dockerHubUser = '') { 
+def call(String project, String imageTag = 'latest', String dockerHubUser = '') {
     if (!project?.trim()) {
         error('Project/image name is required for Docker cleanup.')
     }
