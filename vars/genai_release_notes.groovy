@@ -1,4 +1,4 @@
-import groovy.json.JsonOutput 
+import groovy.json.JsonOutput
 
 def call(Map params = [:]) {
     def enabled = params.Enabled == null ? true : params.Enabled
