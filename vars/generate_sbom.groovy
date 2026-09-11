@@ -1,4 +1,4 @@
-def call(Map params = [:]) { 
+def call(Map params = [:]) {
     def target = params.Target ?: params.target ?: '.'
     def type = params.Type ?: params.type ?: 'fs'
     def output = params.Output ?: params.output ?: 'reports/sbom-cyclonedx.json'
