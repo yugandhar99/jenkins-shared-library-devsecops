@@ -1,4 +1,4 @@
-def call(String sonarQubeServer, String projectName, String projectKey) { 
+def call(String sonarQubeServer, String projectName, String projectKey) {
     call(
         ServerName: sonarQubeServer,
         ProjectName: projectName,
