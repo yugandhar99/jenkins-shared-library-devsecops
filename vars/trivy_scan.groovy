@@ -1,6 +1,6 @@
 def call(Map params = [:]) {
     def target = params.Target ?: params.target ?: '.'
-    def severities = params.Severities ?: params.Severity ?: ['HIGH', 'CRITICAL']
+    def severities = params.Severities ?: params.Severity ?: ['HIGH', 'CRITICAL'] 
     def scanners = params.Scanners ?: ['vuln', 'secret', 'misconfig']
     def exitCode = params.ExitCode == null ? 1 : params.ExitCode
     def reportDir = params.ReportDir ?: 'reports'
