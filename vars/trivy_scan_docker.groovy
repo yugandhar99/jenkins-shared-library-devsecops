@@ -1,4 +1,4 @@
-def call(Map params = [:]) {
+def call(Map params = [:]) { 
     def image = params.Image ?: params.image
     def tag = params.Tag ?: params.tag ?: 'latest'
     def severities = params.Severities ?: params.Severity ?: params.severities ?: ['HIGH', 'CRITICAL']
