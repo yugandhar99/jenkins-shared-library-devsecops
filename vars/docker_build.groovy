@@ -1,5 +1,5 @@
 def call(String imageName, List tags = ['latest'], String contextPath = '.') {
-    validateRequired(imageName, 'imageName') 
+    validateRequired(imageName, 'imageName')
     validateRequired(contextPath, 'contextPath')
 
     if (!tags || tags.isEmpty()) {
