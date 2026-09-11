@@ -1,6 +1,6 @@
 def call(Map params = [:]) {
     def message = params.Message ?: params.message ?: "Build ${env.JOB_NAME} #${env.BUILD_NUMBER} finished with status ${currentBuild.currentResult}"
-    def webhookCredentialId = params.WebhookCredentialId ?: params.webhookCredentialId
+    def webhookCredentialId = params.WebhookCredentialId ?: params.webhookCredentialId 
 
     if (!webhookCredentialId) {
         echo 'Slack webhook credential id not provided. Skipping notification.'
