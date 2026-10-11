@@ -1,5 +1,5 @@
 def call(Map params = [:]) {
-    def credentialId = params.CredId ?: params.credentialsId ?: params.CredentialsId 
+    def credentialId = params.CredId ?: params.credentialsId ?: params.CredentialsId
     def imageBase = params.ImageBase ?: params.imageBase ?: params.Project ?: params.project
     def imageSuffix = params.ImageSuffix ?: params.imageSuffix ?: ''
     def tags = params.Tags ?: params.tags ?: ['latest']
