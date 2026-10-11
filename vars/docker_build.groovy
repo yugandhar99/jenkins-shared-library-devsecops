@@ -1,4 +1,4 @@
-def call(String imageName, List tags = ['latest'], String contextPath = '.') { 
+def call(String imageName, List tags = ['latest'], String contextPath = '.') {
     validateRequired(imageName, 'imageName')
     validateRequired(contextPath, 'contextPath')
 
