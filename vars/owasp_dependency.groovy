@@ -1,4 +1,4 @@
-def call(Map params = [:]) {
+def call(Map params = [:]) { 
     def scanPath = params.ScanPath ?: params.scanPath ?: './'
     def installation = params.Installation ?: params.installation ?: 'OWASP'
     def reportPattern = params.ReportPattern ?: params.reportPattern ?: '**/dependency-check-report.xml'
